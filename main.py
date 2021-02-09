@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-FILM = input("write directory \n")
+FILM = input("write film or series name \n")
 REQ = requests.get("https://worldsubtitle.info/?s={0}".format(FILM)).text
 try:
     LINK = BeautifulSoup(REQ, 'html.parser').find_all(title = FILM)
