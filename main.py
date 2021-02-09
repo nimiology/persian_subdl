@@ -9,7 +9,7 @@ try:
     ASLI = LINK[0]
 
 except:
-    print('sorry i cant find it plz choose number of these')
+    print('\nsorry i cant find it plz choose number of these')
     LINK = BeautifulSoup(REQ,'html.parser').find_all(class_="cat-post-titel")
     for i in range(0,len(LINK)):
         print(f"{i+1} : {LINK[i].string}\n")
@@ -23,10 +23,14 @@ print(LINKPAGE)
 REQ2 = requests.get(LINKPAGE).text
 DOWNLOADLIST = BeautifulSoup(REQ2, 'html.parser').find_all(class_="new-link-3")
 
-LINKS =[]
+LINKSss =[]
 for DOWNLOAD in DOWNLOADLIST:
-    bs=BeautifulSoup(f'{DOWNLOAD}', 'html.parser').find_all('a')
-    LINKS.append(bs[0].get("href"))
+    try:
+        bs=BeautifulSoup(f'{DOWNLOAD}', 'html.parser').find_all('a')
+        print(bs[0].get("href"))
+        LINKSss.append(bs[0].get("href"))
+    except:
+        pass
 
-print(LINKS)
+print(LINKSss)
 
