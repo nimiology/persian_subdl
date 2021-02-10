@@ -46,10 +46,11 @@ for LINKk in LINKSss:
         NAME.append(LINKk.split('/' ))
         NAME = NAME[0][-1]
         print(NAME)
-        download_url(LINKk,f"Downloads/{NAME}")
-        with ZipFile(f"Downloads/{NAME}", 'r') as zipObj:
+        Downloaddirectory =f"Downloads/{NAME}"
+        download_url(LINKk,Downloaddirectory)
+        with ZipFile(Downloaddirectory, 'r') as zipObj:
             zipObj.extractall("Downloads/")
-        os.remove(f"Downloads/{NAME}")
+        os.remove(Downloaddirectory)
 
     except:
         print(NAME + " Failed")
