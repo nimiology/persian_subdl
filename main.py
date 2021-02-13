@@ -4,12 +4,9 @@ from zipfile import ZipFile
 import os
 from persian import PERSSIAN
 
-lan = "Choose your language: \n per : persian\n"
-LANGUAGE = input(lan)
-FILM = input("write film or series name \n")
 
-if LANGUAGE == "per":
-    LINKSss = PERSSIAN(FILM)
+FILM = input("write film or series name \n")
+LINKSss = PERSSIAN(FILM)
 
 
 def download_url(url, save_path, chunk_size=128):
