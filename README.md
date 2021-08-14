@@ -1,5 +1,5 @@
 # persian_subdl
-this script can download all persian subtitles from  world subtitle.info
+this script can download all persian subtitles from  worldsubtitle.info
 <h2>
   for use this script you should
 </h2>
